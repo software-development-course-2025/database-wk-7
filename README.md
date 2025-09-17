@@ -1,63 +1,49 @@
-# 📝 Assignment: Database Design and Normalization
+# Week 7 – Database Design and Normalization
 
-## 🎯 **Learning Objectives**
-* 🛠️ **Understand the principles of good database design** and **normalization**.
-* 💡 **Apply normalization techniques** to improve database structure and efficiency.
-* 🔍 **Learn First, Second, and Third Normal Forms** (1NF, 2NF, 3NF) to eliminate redundancy and optimize data storage.
+## 🧾 Overview
 
----
-
-## 📋 **What You'll Need**
-* 💻 A computer with internet access.
-* ✍️ A code editor (e.g., Visual Studio Code).
-* 🖥️ MySQL Workbench or another SQL database environment.
+This project demonstrates the application of **First Normal Form (1NF)** and **Second Normal Form (2NF)** to convert unnormalized data into structured, efficient relational tables using SQL.  
+The main goals are to eliminate redundancy, improve data consistency, and enforce referential integrity through relational modeling.
 
 ---
 
+## 🎯 Objectives
 
-## 📝 Submission Instructions  
-📂 Write all your SQL queries in the **answers.sql** file.  
-✍️ Answer each question concisely and make sure your queries are clear and correct.  
-🗣️ Structure your responses clearly, and use comments if necessary to explain your approach.
-
---- 
-
-## 📚 Assignment Questions
+- Apply **1NF** by splitting multi-valued attributes into atomic rows  
+- Apply **2NF** by removing partial dependencies from composite keys  
+- Use SQL to define normalized tables with **primary** and **foreign key** constraints  
+- Ensure repeatable execution using `DROP TABLE IF EXISTS`
 
 ---
 
-### Question 1 Achieving 1NF (First Normal Form) 🛠️
-Task:
-- You are given the following table **ProductDetail**:
+## ▶️ How to Run
 
-| OrderID | CustomerName  | Products                        |
-|---------|---------------|---------------------------------|
-| 101     | John Doe      | Laptop, Mouse                   |
-| 102     | Jane Smith    | Tablet, Keyboard, Mouse         |
-| 103     | Emily Clark   | Phone                           |
-
-
-- In the table above, the **Products column** contains multiple values, which violates **1NF**.
-- **Write an SQL query** to transform this table into **1NF**, ensuring that each row represents a single product for an order
-
---- 
-
-### Question 2 Achieving 2NF (Second Normal Form) 🧩
-
-- You are given the following table **OrderDetails**, which is already in **1NF** but still contains partial dependencies:
-
-| OrderID | CustomerName  | Product      | Quantity |
-|---------|---------------|--------------|----------|
-| 101     | John Doe      | Laptop       | 2        |
-| 101     | John Doe      | Mouse        | 1        |
-| 102     | Jane Smith    | Tablet       | 3        |
-| 102     | Jane Smith    | Keyboard     | 1        |
-| 102     | Jane Smith    | Mouse        | 2        |
-| 103     | Emily Clark   | Phone        | 1        |
-
-- In the table above, the **CustomerName** column depends on **OrderID** (a partial dependency), which violates **2NF**. 
-
-- Write an SQL query to transform this table into **2NF** by removing partial dependencies. Ensure that each non-key column fully depends on the entire primary key.
+1. Open your MySQL environment (Workbench, DBeaver, or CLI)  
+2. Connect to your target database (e.g., `testdb`)  
+3. Execute the SQL statements from `answers.sql`  
+4. Confirm creation of the following tables:
+   - `ProductDetail_1NF`
+   - `CustomerOrders`
+   - `OrderItems`  
+5. Run queries to inspect normalized data and verify relationships
 
 ---
-Good luck 🚀
+
+## 📁 Files
+
+- `answers.sql` — Fully commented SQL script with normalization steps  
+- `README.md` — Project documentation
+
+---
+
+## 👤 Author
+
+Developed by **Augusto Mate** — Student at **Power Learn Project Academy (PLP)**  
+Week 7 assignment for the *Database Design & Programming with SQL*  
+GitHub: [github.com/Augusto047](https://github.com/Augusto047)
+
+---
+
+## 🪪 License
+
+MIT License © 2025 Software Development Course 2025
